@@ -21,10 +21,10 @@ def check_today(thisdate):
     """
     The course is described as:
 
-    "...runs from the first Monday of the month, 
+    "...runs from the first Monday of the month,
         and lasts for four weeks..."
 
-    Simple? Yes, but there are some surprising corner 
+    Simple? Yes, but there are some surprising corner
             cases, e.g.:
      - sometimes the course doesn't start until the 7th of the month (e.g.September 2020)
      - the last day or two of <MONTH>'s course end up being in <MONTH+1> (e.g September 2020)
@@ -122,7 +122,7 @@ def get_file(filename):
     format, then splits the title text off and tidies it - and returns
     both it and the now-trimmed body as a list.
     """
-    starturl = "https://raw.githubusercontent.com/snori74/linuxupskillchallenge/master/"
+    starturl = "https://raw.githubusercontent.com/livialima/linuxupskillchallenge/master/"
     url = starturl + filename
     r = requests.get(url, allow_redirects=True)
     #   comes back as type 'bytes', which we convert to string
@@ -161,7 +161,7 @@ def insert_backlink(sr, body, day_num):
     if day_num == 1:
         print("No backlink in lesson 1")
     else:
-        #   we pull the lesson file for the previous directly from GitHub, and 
+        #   we pull the lesson file for the previous directly from GitHub, and
         #   grab the backlink title from that...
         filename = str(day_num - 1).zfill(2) + ".md"  #   Padding '1' to '01'
         bl_title, bl_body = get_file(filename)
@@ -174,7 +174,7 @@ def insert_backlink(sr, body, day_num):
                 print("Yup! foundit")
                 bl_url = post.url
                 break
-        split_text = "*Copyright 2012-2020 @snori74"
+        split_text = "*Copyright 2012-2021 @snori74"
         top_of_body = body.partition(split_text)[0]
         bottom_of_body = body.partition(split_text)[2]
         backlink_text = (
@@ -205,11 +205,11 @@ def get_post_pin_day(sr, day_num):
     sticky(mypost)
     pause(5)
     #    and pop in a matching "Thoughts and comments" post...
-    title, body = get_file("thoughts-and-comments.md")
-    #   replace X with the day number
-    title = title.partition("X")[0] + str(day_num) + title.partition("X")[2]
-    mypost = post(sr, title, body)
-   
+    #    title, body = get_file("thoughts-and-comments.md")
+    #    replace X with the day number
+    #    title = title.partition("X")[0] + str(day_num) + title.partition("X")[2]
+    #    mypost = post(sr, title, body)
+
 def get_post_pin_file(sr, filename):
     title, body = get_file(filename)
     mypost = post(sr, title, body)
@@ -217,7 +217,7 @@ def get_post_pin_file(sr, filename):
     approve(mypost)
     pause(5)
     sticky(mypost)
-    
+
 
 def get_post_file(sr, filename):
     title, body = get_file(filename)
@@ -230,7 +230,7 @@ def get_post_advert(sr, subreddit_name):
     """
     sr = The subreddit where we send lessons
     subreddit_name = The subreddit where we want to advertise
-    
+
     The 'advert' text files are named in a very specific way:
 
            txt-for-linux-subreddit.md
@@ -239,7 +239,7 @@ def get_post_advert(sr, subreddit_name):
     ...and have a very specific format.
 
     If sr == "linuxupskillBotTest" then we're in TEST mode and
-    we will post the adverts in that same directory. Otherwise they go 
+    we will post the adverts in that same directory. Otherwise they go
     to their specific subreddits.
 
     """
@@ -253,7 +253,7 @@ def get_post_advert(sr, subreddit_name):
     if sr == "linuxupskillBotTest":
         print("Posting advert to TEST subreddit")
         mypost = post(sr, title, body)
-       
+
     else:
         if sr == "linuxupskillChallenge":
             advert_sr = reddit.subreddit(subreddit_name)
@@ -301,7 +301,7 @@ def approve(post):
         print(e)
     # except:
     #    print("WARNING: can't approve it for some reason...")
-     
+
 
 def sticky(post):
     print("Stickying...")
@@ -309,7 +309,7 @@ def sticky(post):
         post.mod.sticky(state=True)
     except Exception as e:
         print(e)
-    #except:
+    # except:
     #    print("WARNING: can't sticky it for some reason...")
 
 
@@ -322,6 +322,3 @@ def unsticky(post):
         print(e)
     # except:
     #    print("WARNING: can't unsticky it for some reason...")
-
-
-                
