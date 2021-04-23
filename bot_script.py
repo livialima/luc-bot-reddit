@@ -89,50 +89,47 @@ def main():
         #       --> short-video and videos are now incorporated to the main day post
         #    (NO) Repost "HOW THIS WORKS" text. Don't pin, cos only two can be at a time
         clear_all_pinned(subreddit)
+        pin_title(subreddit, "HOW THIS WORKS")
         get_post_pin_day(subreddit, day_num)
-        #   get_post_pin_file(subreddit, "day1-short-video.md")
-        #   delete the old "HOW..."
-        #   delete_title(subreddit, "HOW THIS WORKS")
-        #   then pull in the current one and pin...
-        #   get_post_pin_file(subreddit, "how-this-works.md")
-        #   clear last few of last month's lessons...
         #   Abolishing deleting posts: working on lock/archiving
-        #   delete_day(subreddit, 20)
-        #   delete_day(subreddit, 19)
-        #   delete_day(subreddit, 18)
-        #   delete_day(subreddit, 17)
-        #   delete_day(subreddit, 16)
+
+        #   calculate the start of the next course, and post a message about that
+        first_monday = start_of_next(today_date)
+        #   expand
+        first_monday = "Spread the word! Next course starts on Monday, " + first_monday
+        post(subreddit, first_monday, "Just a reminder that the course always restarts on the first Monday of the next month. Don't forget to spread the word and bring your friends!")
+
 
     elif day_num == 18:
 
         #   retrive, post and pin today's lesson as normal
         clear_all_pinned(subreddit)
+        pin_title(subreddit, "HOW THIS WORKS")
         get_post_pin_day(subreddit, day_num)
-        #delete_day(subreddit, day_num - 4)
-
-        #   delete the old "HOW..."
-        #   delete_title(subreddit, "HOW THIS WORKS")
-
-        #   then pull in the current one and pin...
-        get_post_pin_file(subreddit, "how-this-works.md")
 
         #    ...and post custom 'advert' messages to subreddits.
-        get_post_advert(subreddit, "linuxadmin")    # OK'd by u/mthode, 13-Sept-2020
-        get_post_advert(subreddit, "sysadminblogs") # OK'd by u/VA_Network_Nerd, 13-Sept-2020
-        get_post_advert(subreddit, "linux4noobs") # No reply from u/Pi31415926
-        get_post_advert(subreddit, "linuxmasterrace") # No reply from Mephiz
-        get_post_advert(subreddit, "linux")   # No reply from u/kylev
+        get_post_advert(subreddit, "linux")             # OK to post, no complaints
+        get_post_advert(subreddit, "linux4noobs")       # BAD
+        get_post_advert(subreddit, "linux_mentor")      # OK
+        get_post_advert(subreddit, "linuxadmin")        # OK
+        get_post_advert(subreddit, "linuxmasterrace")   # Need to add flair
+        get_post_advert(subreddit, "sysadminblogs")     # OK
+        get_post_advert(subreddit, "ubuntu")            # OK
+
+    elif day_num == 20:
+
+        #   retrive, post and pin today's lesson as normal
+        clear_all_pinned(subreddit)
+        pin_title(subreddit, "HOW THIS WORKS")
+        get_post_pin_day(subreddit, day_num)
+        get_post_pin_day(subreddit, 21)
 
         #   and "Day 0" posts for the benefit of the new 'intake'...
         get_post_file(subreddit, "00-AWS-Free-Tier.md")
+        get_post_file(subreddit, "00-Azure-Free-Tier.md")
         get_post_file(subreddit, "00-Digital-Ocean.md")
         get_post_file(subreddit, "00-Google-Cloud.md")
-
-        #   calculate the start of the next course, and post a message about that
-        first_monday = start_of_next(today_date)
-        #   expand
-        first_monday = "Next course starts on Monday, " + first_monday
-        post(subreddit, first_monday, "")
+        get_post_file(subreddit, "00-Remote-server-without-Credit-card.md")
 
     elif day_num == None:
         print("\nNo lesson today...")
@@ -144,8 +141,6 @@ def main():
         pin_title(subreddit, "HOW THIS WORKS")
         get_post_pin_day(subreddit, day_num)
         #   Abolishing deleting posts: working on lock/archiving
-        #   delete_day(subreddit, day_num - 4)
-
 
 if __name__ == "__main__":
     import sys
