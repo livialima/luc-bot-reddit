@@ -124,6 +124,7 @@ def main():
         pin_title(subreddit, "HOW THIS WORKS")
         get_post_pin_day(subreddit, day_num)
         get_post_pin_day(subreddit, 21)
+        get_post_file(subreddit, "21.md")
 
         #   and "Day 0" posts for the benefit of the new 'intake'...
         get_post_file(subreddit, "00-AWS-Free-Tier.md")
