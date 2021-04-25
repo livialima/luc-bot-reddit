@@ -108,8 +108,9 @@ def main():
         get_post_pin_day(subreddit, day_num)
 
         #    ...and post custom 'advert' messages to subreddits.
+        get_post_advert(subreddit, "commandline")       # need to check
         get_post_advert(subreddit, "linux")             # OK to post, no complaints
-        get_post_advert(subreddit, "linux4noobs")       # BAD
+        #get_post_advert(subreddit, "linux4noobs")       # BAD
         get_post_advert(subreddit, "linux_mentor")      # OK
         get_post_advert(subreddit, "linuxadmin")        # OK
         get_post_advert(subreddit, "linuxmasterrace")   # Need to add flair
