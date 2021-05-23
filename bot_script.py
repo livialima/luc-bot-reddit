@@ -87,11 +87,17 @@ def main():
     if day_num == 1:
         #    Post and pin the standard "Day 1" lesson - and the ditto the "short video"
         #       --> short-video and videos are now incorporated to the main day post
-        #    (NO) Repost "HOW THIS WORKS" text. Don't pin, cos only two can be at a time
         clear_all_pinned(subreddit)
         pin_title(subreddit, "HOW THIS WORKS")
         get_post_pin_day(subreddit, day_num)
         #   Abolishing deleting posts: working on lock/archiving
+
+    if day_num == 16:
+        #    Repost "HOW THIS WORKS" text. Don't pin, cos only two can be at a time
+        clear_all_pinned(subreddit)
+        get_post_pin_file(subreddit, "how-this-works.md")
+        pin_title(subreddit, "HOW THIS WORKS")
+        get_post_pin_day(subreddit, day_num)
 
         #   calculate the start of the next course, and post a message about that
         first_monday = start_of_next(today_date)
@@ -108,14 +114,19 @@ def main():
         get_post_pin_day(subreddit, day_num)
 
         #    ...and post custom 'advert' messages to subreddits.
-        get_post_advert(subreddit, "commandline")       # need to check
-        get_post_advert(subreddit, "linux")             # OK to post, no complaints
+        get_post_advert(subreddit, "commandline", first_monday)       # OK
+        get_post_advert(subreddit, "debian", first_monday)            # need to test
+        get_post_advert(subreddit, "devops", first_monday)            # need to test
+        #get_post_advert(subreddit, "learn_linux", first_monday)       # need to test
+        get_post_advert(subreddit, "linux", first_monday)             # OK
         #get_post_advert(subreddit, "linux4noobs")       # BAD
-        get_post_advert(subreddit, "linux_mentor")      # OK
-        get_post_advert(subreddit, "linuxadmin")        # OK
-        get_post_advert(subreddit, "linuxmasterrace")   # Need to add flair
-        get_post_advert(subreddit, "sysadminblogs")     # OK
-        get_post_advert(subreddit, "ubuntu")            # OK
+        get_post_advert(subreddit, "linux_mentor", first_monday)      # OK
+        get_post_advert(subreddit, "linuxadmin", first_monday)        # OK
+        #get_post_advert(subreddit, "linuxbrasil")       # need to test when PT is ready
+        get_post_advert(subreddit, "linuxmasterrace", first_monday)   # Need to add flair
+        get_post_advert(subreddit, "linuxmint", first_monday)         # need to test
+        get_post_advert(subreddit, "sysadminblogs", first_monday)     # OK
+        get_post_advert(subreddit, "ubuntu", first_monday)            # OK
 
     elif day_num == 20:
 
