@@ -226,7 +226,7 @@ def get_post_file(sr, filename):
     approve(mypost)
 
 
-def get_post_advert(sr, subreddit_name, first_monday):
+def get_post_advert(sr, subreddit_name, thisdate):
     """
     sr = The subreddit where we send lessons
     subreddit_name = The subreddit where we want to advertise
@@ -250,7 +250,7 @@ def get_post_advert(sr, subreddit_name, first_monday):
         print("WARNING: for some reason could not find 'title'...")
         return
 
-    title = title + first_monday
+    title = title + start_of_next(thisdate)
 
     if sr == "linuxupskillBotTest":
         print("Posting advert to TEST subreddit")

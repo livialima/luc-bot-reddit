@@ -114,19 +114,19 @@ def main():
         get_post_pin_day(subreddit, day_num)
 
         #    ...and post custom 'advert' messages to subreddits.
-        get_post_advert(subreddit, "commandline", first_monday)       # OK
-        get_post_advert(subreddit, "debian", first_monday)            # need to test
-        get_post_advert(subreddit, "devops", first_monday)            # need to test
-        #get_post_advert(subreddit, "learn_linux", first_monday)       # need to test
-        get_post_advert(subreddit, "linux", first_monday)             # OK
+        get_post_advert(subreddit, "commandline", today_date)       # OK
+        get_post_advert(subreddit, "debian", today_date)            # need to test
+        get_post_advert(subreddit, "devops", today_date)            # need to test
+        #get_post_advert(subreddit, "learn_linux")       # need to test
+        get_post_advert(subreddit, "linux", today_date)             # OK
         #get_post_advert(subreddit, "linux4noobs")       # BAD
-        get_post_advert(subreddit, "linux_mentor", first_monday)      # OK
-        get_post_advert(subreddit, "linuxadmin", first_monday)        # OK
+        get_post_advert(subreddit, "linux_mentor", today_date)      # OK
+        get_post_advert(subreddit, "linuxadmin", today_date)        # OK
         #get_post_advert(subreddit, "linuxbrasil")       # need to test when PT is ready
-        get_post_advert(subreddit, "linuxmasterrace", first_monday)   # Need to add flair
-        get_post_advert(subreddit, "linuxmint", first_monday)         # need to test
-        get_post_advert(subreddit, "sysadminblogs", first_monday)     # OK
-        get_post_advert(subreddit, "ubuntu", first_monday)            # OK
+        get_post_advert(subreddit, "linuxmasterrace", today_date)   # Need to add flair
+        get_post_advert(subreddit, "linuxmint", today_date)         # need to test
+        get_post_advert(subreddit, "sysadminblogs", today_date)     # OK
+        get_post_advert(subreddit, "ubuntu", today_date)            # OK
 
     elif day_num == 20:
 
