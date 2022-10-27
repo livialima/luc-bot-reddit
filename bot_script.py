@@ -114,18 +114,27 @@ def main():
         get_post_pin_day(subreddit, day_num)
 
         #    ...and post custom 'advert' messages to subreddits.
+        pause(900)
         get_post_advert(subreddit, "commandline", today_date)       # OK
-        get_post_advert(subreddit, "debian", today_date)            # need to test
-        get_post_advert(subreddit, "devops", today_date)            # need to test
-        #get_post_advert(subreddit, "learn_linux")       # need to test
+        pause(900)
+        get_post_advert(subreddit, "debian", today_date)            # OK
+        pause(900)
+        get_post_advert(subreddit, "devops", today_date)            # OK
+        #get_post_advert(subreddit, "learn_linux")                  # need to test
+        pause(900)
         get_post_advert(subreddit, "linux", today_date)             # OK
-        #get_post_advert(subreddit, "linux4noobs")       # BAD
+        #get_post_advert(subreddit, "linux4noobs")                  # BAD
+        pause(900)
         get_post_advert(subreddit, "linux_mentor", today_date)      # OK
+        pause(900)
         get_post_advert(subreddit, "linuxadmin", today_date)        # OK
         #get_post_advert(subreddit, "linuxbrasil")       # need to test when PT is ready
-        get_post_advert(subreddit, "linuxmasterrace", today_date)   # Need to add flair
-        get_post_advert(subreddit, "linuxmint", today_date)         # need to test
+        pause(900)
+        get_post_advert(subreddit, "linuxmasterrace", today_date)   # Need flair
+        #get_post_advert(subreddit, "linuxmint", today_date)        # Need flair, got banned
+        pause(900)
         get_post_advert(subreddit, "sysadminblogs", today_date)     # OK
+        pause(900)
         get_post_advert(subreddit, "ubuntu", today_date)            # OK
 
     elif day_num == 20:
@@ -138,11 +147,12 @@ def main():
         get_post_file(subreddit, "21.md")
 
         #   and "Day 0" posts for the benefit of the new 'intake'...
-        get_post_file(subreddit, "00-AWS-Free-Tier.md")
-        get_post_file(subreddit, "00-Azure-Free-Tier.md")
-        get_post_file(subreddit, "00-Digital-Ocean.md")
-        get_post_file(subreddit, "00-Google-Cloud.md")
-        get_post_file(subreddit, "00-Remote-server-without-Credit-card.md")
+        #   REMODELING OF DAY ZERO ONGOING FOR NOVEMBER INTAKE
+        #get_post_file(subreddit, "00-AWS-Free-Tier.md")
+        #get_post_file(subreddit, "00-Azure-Free-Tier.md")
+        #get_post_file(subreddit, "00-Digital-Ocean.md")
+        #get_post_file(subreddit, "00-Google-Cloud.md")
+        #get_post_file(subreddit, "00-Remote-server-without-Credit-Card.md")
 
     elif day_num == None:
         print("\nNo lesson today...")
