@@ -92,6 +92,14 @@ def main():
         get_post_pin_day(subreddit, day_num)
         #   Abolishing deleting posts: working on lock/archiving
 
+        #   and "Day 0" posts for the benefit of the new 'intake'...
+        #   TEMPORARY - REMODELING OF DAY ZERO ONGOING FOR DECEMBER INTAKE
+        get_post_file(subreddit, "00-AWS-Free-Tier.md")
+        get_post_file(subreddit, "00-Azure-Free-Tier.md")
+        get_post_file(subreddit, "00-Digital-Ocean.md")
+        get_post_file(subreddit, "00-Google-Cloud.md")
+        get_post_file(subreddit, "00-Remote-server-without-Credit-Card.md")
+
     if day_num == 16:
         #    Repost "HOW THIS WORKS" text. Don't pin, cos only two can be at a time
         clear_all_pinned(subreddit)
@@ -147,7 +155,7 @@ def main():
         get_post_file(subreddit, "21.md")
 
         #   and "Day 0" posts for the benefit of the new 'intake'...
-        #   REMODELING OF DAY ZERO ONGOING FOR NOVEMBER INTAKE
+        #   TEMPORARY - REMODELING OF DAY ZERO ONGOING FOR DECEMBER INTAKE
         #get_post_file(subreddit, "00-AWS-Free-Tier.md")
         #get_post_file(subreddit, "00-Azure-Free-Tier.md")
         #get_post_file(subreddit, "00-Digital-Ocean.md")
