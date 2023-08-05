@@ -88,23 +88,25 @@ def main():
         #    Post and pin the standard "Day 1" lesson - and the ditto the "short video"
         #       --> short-video and videos are now incorporated to the main day post
         clear_all_pinned(subreddit)
-        pin_title(subreddit, "HOW THIS WORKS")
+        pin_title(subreddit, "PLEASE READ THIS FIRST! HOW THIS WORKS & FAQ")
         get_post_pin_day(subreddit, day_num)
         #   Abolishing deleting posts: working on lock/archiving
 
         #   and "Day 0" posts for the benefit of the new 'intake'...
-        #   TEMPORARY - REMODELING OF DAY ZERO ONGOING FOR DECEMBER INTAKE
-        get_post_file(subreddit, "00-AWS-Free-Tier.md")
-        get_post_file(subreddit, "00-Azure-Free-Tier.md")
-        get_post_file(subreddit, "00-Digital-Ocean.md")
-        get_post_file(subreddit, "00-Google-Cloud.md")
-        get_post_file(subreddit, "00-Remote-server-without-Credit-Card.md")
+        #   REMODELING OF DAY ZERO - keep it simple and use only 3 main methods,
+        #   specifics for each VPS can have their own file but not a post.
+        #get_post_file(subreddit, "00-AWS-Free-Tier.md")
+        #get_post_file(subreddit, "00-Azure-Free-Tier.md")
+        #get_post_file(subreddit, "00-Google-Cloud.md")
+        get_post_file(subreddit, "00-VPS-big.md")
+        get_post_file(subreddit, "00-VPS-small.md")
+        get_post_file(subreddit, "00-Local-Server.md")
 
     if day_num == 16:
         #    Repost "HOW THIS WORKS" text. Don't pin, cos only two can be at a time
         clear_all_pinned(subreddit)
         get_post_pin_file(subreddit, "how-this-works.md")
-        pin_title(subreddit, "HOW THIS WORKS")
+        pin_title(subreddit, "PLEASE READ THIS FIRST! HOW THIS WORKS & FAQ")
         get_post_pin_day(subreddit, day_num)
 
         #   calculate the start of the next course, and post a message about that
@@ -113,54 +115,45 @@ def main():
         first_monday = "Spread the word! Next course starts on Monday, " + first_monday
         post(subreddit, first_monday, "Just a reminder that the course always restarts on the first Monday of the next month. Don't forget to spread the word and bring your friends!")
 
-
     elif day_num == 18:
 
         #   retrive, post and pin today's lesson as normal
         clear_all_pinned(subreddit)
-        pin_title(subreddit, "HOW THIS WORKS")
+        pin_title(subreddit, "PLEASE READ THIS FIRST! HOW THIS WORKS & FAQ")
         get_post_pin_day(subreddit, day_num)
 
+        # UPDATE JULY 2023: removing adverts because Reddit is now a dumpster fire
         #    ...and post custom 'advert' messages to subreddits.
-        pause(900)
-        get_post_advert(subreddit, "commandline", today_date)       # OK
-        pause(900)
-        get_post_advert(subreddit, "debian", today_date)            # OK
-        pause(900)
-        get_post_advert(subreddit, "devops", today_date)            # OK
+        #pause(900)
+        #get_post_advert(subreddit, "commandline", today_date)       # OK
+        #pause(900)
+        #get_post_advert(subreddit, "debian", today_date)            # OK
+        #pause(900)
+        #get_post_advert(subreddit, "devops", today_date)            # OK
         #get_post_advert(subreddit, "learn_linux")                  # need to test
-        pause(900)
-        get_post_advert(subreddit, "linux", today_date)             # OK
+        #pause(900)
+        #get_post_advert(subreddit, "linux", today_date)             # OK
         #get_post_advert(subreddit, "linux4noobs")                  # BAD
-        pause(900)
-        get_post_advert(subreddit, "linux_mentor", today_date)      # OK
-        pause(900)
-        get_post_advert(subreddit, "linuxadmin", today_date)        # OK
+        #pause(900)
+        #get_post_advert(subreddit, "linux_mentor", today_date)      # OK
+        #pause(900)
+        #get_post_advert(subreddit, "linuxadmin", today_date)        # OK
         #get_post_advert(subreddit, "linuxbrasil")       # need to test when PT is ready
-        pause(900)
-        get_post_advert(subreddit, "linuxmasterrace", today_date)   # Need flair
+        #pause(900)
+        #get_post_advert(subreddit, "linuxmasterrace", today_date)   # Need flair
         #get_post_advert(subreddit, "linuxmint", today_date)        # Need flair, got banned
-        pause(900)
-        get_post_advert(subreddit, "sysadminblogs", today_date)     # OK
-        pause(900)
-        get_post_advert(subreddit, "ubuntu", today_date)            # OK
+        #pause(900)
+        #get_post_advert(subreddit, "sysadminblogs", today_date)     # OK
+        #pause(900)
+        #get_post_advert(subreddit, "ubuntu", today_date)            # OK
 
     elif day_num == 20:
 
         #   retrive, post and pin today's lesson as normal
         clear_all_pinned(subreddit)
-        pin_title(subreddit, "HOW THIS WORKS")
+        pin_title(subreddit, "PLEASE READ THIS FIRST! HOW THIS WORKS & FAQ")
         get_post_pin_day(subreddit, day_num)
-        get_post_pin_day(subreddit, 21)
         get_post_file(subreddit, "21.md")
-
-        #   and "Day 0" posts for the benefit of the new 'intake'...
-        #   TEMPORARY - REMODELING OF DAY ZERO ONGOING FOR DECEMBER INTAKE
-        #get_post_file(subreddit, "00-AWS-Free-Tier.md")
-        #get_post_file(subreddit, "00-Azure-Free-Tier.md")
-        #get_post_file(subreddit, "00-Digital-Ocean.md")
-        #get_post_file(subreddit, "00-Google-Cloud.md")
-        #get_post_file(subreddit, "00-Remote-server-without-Credit-Card.md")
 
     elif day_num == None:
         print("\nNo lesson today...")
@@ -169,7 +162,7 @@ def main():
     else:
         #   a 'normal' weekday...
         clear_all_pinned(subreddit)
-        pin_title(subreddit, "HOW THIS WORKS")
+        pin_title(subreddit, "PLEASE READ THIS FIRST! HOW THIS WORKS & FAQ")
         get_post_pin_day(subreddit, day_num)
         #   Abolishing deleting posts: working on lock/archiving
 
