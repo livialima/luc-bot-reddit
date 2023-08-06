@@ -89,18 +89,16 @@ def main():
         #       --> short-video and videos are now incorporated to the main day post
         clear_all_pinned(subreddit)
         pin_title(subreddit, "PLEASE READ THIS FIRST! HOW THIS WORKS & FAQ")
-        get_post_pin_day(subreddit, day_num)
         #   Abolishing deleting posts: working on lock/archiving
-
         #   and "Day 0" posts for the benefit of the new 'intake'...
         #   REMODELING OF DAY ZERO - keep it simple and use only 3 main methods,
         #   specifics for each VPS can have their own file but not a post.
         #get_post_file(subreddit, "00-AWS-Free-Tier.md")
         #get_post_file(subreddit, "00-Azure-Free-Tier.md")
         #get_post_file(subreddit, "00-Google-Cloud.md")
-        get_post_file(subreddit, "00-VPS-big.md")
-        get_post_file(subreddit, "00-VPS-small.md")
         get_post_file(subreddit, "00-Local-Server.md")
+        get_post_file(subreddit, "00-VPS-small.md")
+        get_post_file(subreddit, "00-VPS-big.md")
 
     if day_num == 16:
         #    Repost "HOW THIS WORKS" text. Don't pin, cos only two can be at a time
