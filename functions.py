@@ -122,7 +122,7 @@ def get_file(filename):
     format, then splits the title text off and tidies it - and returns
     both it and the now-trimmed body as a list.
     """
-    starturl = "https://raw.githubusercontent.com/livialima/linuxupskillchallenge/master/lessons/"
+    starturl = "https://raw.githubusercontent.com/livialima/linuxupskillchallenge/master/docs/"
     url = starturl + filename
     r = requests.get(url, allow_redirects=True)
     #   comes back as type 'bytes', which we convert to string
@@ -143,7 +143,7 @@ def get_advert_file(filename):
     format, then splits the title text off and tidies it - and returns
     both it and the now-trimmed body as a list.
     """
-    starturl = "https://raw.githubusercontent.com/livialima/linuxupskillchallenge/master/lessons/"
+    starturl = "https://raw.githubusercontent.com/livialima/linuxupskillchallenge/master/docs/"
     url = starturl + filename
     r = requests.get(url, allow_redirects=True)
     #   comes back as type 'bytes', which we convert to string
