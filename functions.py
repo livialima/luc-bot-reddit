@@ -174,7 +174,7 @@ def insert_backlink(sr, body, day_num):
                 print("Yup! foundit")
                 bl_url = post.url
                 break
-        split_text = "*Copyright 2012-2021 @snori74"
+        split_text = "Some rights reserved"
         top_of_body = body.partition(split_text)[0]
         bottom_of_body = body.partition(split_text)[2]
         backlink_text = (
