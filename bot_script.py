@@ -96,9 +96,10 @@ def main():
         #get_post_file(subreddit, "00-AWS-Free-Tier.md")
         #get_post_file(subreddit, "00-Azure-Free-Tier.md")
         #get_post_file(subreddit, "00-Google-Cloud.md")
-        get_post_file(subreddit, "00-Local-Server.md")
-        get_post_file(subreddit, "00-VPS-small.md")
-        get_post_file(subreddit, "00-VPS-big.md")
+        #get_post_file(subreddit, "00-Local-Server.md")
+        #get_post_file(subreddit, "00-VPS-small.md")
+        #get_post_file(subreddit, "00-VPS-big.md")
+        get_post_file(subreddit, "00.md")
 
     if day_num == 16:
         #    Repost "HOW THIS WORKS" text. Don't pin, cos only two can be at a time
