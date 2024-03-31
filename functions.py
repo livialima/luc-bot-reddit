@@ -128,12 +128,12 @@ def get_file(filename):
     #   comes back as type 'bytes', which we convert to string
     contents = r.content
     strcontent = contents.decode("utf-8")
+    #   mkdocs features are everything before the leading "# " of the title...
+    full_file = strcontent.partition("# ")[2]
     #   title line is everything before the newline...
-    title = strcontent.partition("\n")[0]
+    title = full_file.partition("\n")[0]
     #   ...and the body is everything after.
-    body = strcontent.partition("\n")[2]
-    #   and then we trim the leading "# " off the title...
-    title = title.partition("# ")[2]
+    body = full_file.partition("\n")[2]
     return [title, body]
 
 
